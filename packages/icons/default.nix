@@ -1,5 +1,8 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
 }:
 
 let

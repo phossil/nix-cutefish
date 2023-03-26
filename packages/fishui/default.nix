@@ -1,6 +1,16 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtquickcontrols2, qtx11extras, qttools, kwindowsystem, qtgraphicaleffects
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtquickcontrols2
+, qtx11extras
+, qttools
+, kwindowsystem
+, qtgraphicaleffects
 }:
 
 let

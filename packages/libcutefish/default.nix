@@ -1,7 +1,18 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtquickcontrols2,
-  libkscreen, kio, qtsensors, bluez-qt, networkmanager-qt, modemmanager-qt
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtquickcontrols2
+, libkscreen
+, kio
+, qtsensors
+, bluez-qt
+, networkmanager-qt
+, modemmanager-qt
 }:
 
 let
@@ -20,8 +31,14 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
   buildInputs = [
-    qtbase qtquickcontrols2
-    libkscreen kio qtsensors bluez-qt networkmanager-qt modemmanager-qt
+    qtbase
+    qtquickcontrols2
+    libkscreen
+    kio
+    qtsensors
+    bluez-qt
+    networkmanager-qt
+    modemmanager-qt
   ];
 
   patches = [ ./cmake.patch ];

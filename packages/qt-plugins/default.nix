@@ -1,8 +1,17 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtquickcontrols2, qtx11extras, kwindowsystem,
-  libdbusmenu,
-  xorg, lxqt
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtquickcontrols2
+, qtx11extras
+, kwindowsystem
+, libdbusmenu
+, xorg
+, lxqt
 }:
 
 let
@@ -21,9 +30,13 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
   buildInputs = [
-    qtbase qtquickcontrols2 qtx11extras kwindowsystem
+    qtbase
+    qtquickcontrols2
+    qtx11extras
+    kwindowsystem
     libdbusmenu
-    xorg.libXdmcp lxqt.libqtxdg
+    xorg.libXdmcp
+    lxqt.libqtxdg
   ];
 
   patches = [ ./cmake.patch ];

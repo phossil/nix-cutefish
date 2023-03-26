@@ -1,8 +1,18 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtquickcontrols2, qtx11extras, qttools, qtgraphicaleffects,
-  pam,
-  libcutefish, fishui
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtquickcontrols2
+, qtx11extras
+, qttools
+, qtgraphicaleffects
+, pam
+, libcutefish
+, fishui
 }:
 
 let
@@ -21,9 +31,14 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
   buildInputs = [
-    qtbase qtquickcontrols2 qtx11extras qttools qtgraphicaleffects
+    qtbase
+    qtquickcontrols2
+    qtx11extras
+    qttools
+    qtgraphicaleffects
     pam
-    libcutefish fishui
+    libcutefish
+    fishui
   ];
 
   postPatch = ''

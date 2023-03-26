@@ -1,7 +1,19 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtx11extras, qttools, kwindowsystem,
-  kcoreaddons, kdecoration, kconfig, kwin, epoxy
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtx11extras
+, qttools
+, kwindowsystem
+, kcoreaddons
+, kdecoration
+, kconfig
+, kwin
+, epoxy
 }:
 
 let
@@ -20,12 +32,19 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
   buildInputs = [
-    qtbase qtx11extras qttools kwindowsystem
-    kcoreaddons kdecoration kconfig kwin epoxy
+    qtbase
+    qtx11extras
+    qttools
+    kwindowsystem
+    kcoreaddons
+    kdecoration
+    kconfig
+    kwin
+    epoxy
   ];
 
   patches = [
-    ./cmake.patch 
+    ./cmake.patch
     ./workaround.patch
   ];
 

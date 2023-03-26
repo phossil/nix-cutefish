@@ -1,9 +1,23 @@
-{ stdenv, lib, fetchFromCutefishGitHub, cutefishUpdateScript,
-  cmake, extra-cmake-modules, wrapQtAppsHook,
-  qtbase, qtquickcontrols2, qtx11extras, qttools, kwindowsystem, qtgraphicaleffects,
-  kglobalaccel, polkit, polkit-qt, pulseaudio,
-  xorg, pcre,
-  fishui
+{ stdenv
+, lib
+, fetchFromCutefishGitHub
+, cutefishUpdateScript
+, cmake
+, extra-cmake-modules
+, wrapQtAppsHook
+, qtbase
+, qtquickcontrols2
+, qtx11extras
+, qttools
+, kwindowsystem
+, qtgraphicaleffects
+, kglobalaccel
+, polkit
+, polkit-qt
+, pulseaudio
+, xorg
+, pcre
+, fishui
 }:
 
 let
@@ -22,9 +36,22 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
   buildInputs = [
-    qtbase qtquickcontrols2 qtx11extras qttools kwindowsystem qtgraphicaleffects
-    kglobalaccel polkit polkit-qt pulseaudio
-    xorg.libSM xorg.libXdmcp xorg.libXtst xorg.libXcursor xorg.xf86inputlibinput pcre
+    qtbase
+    qtquickcontrols2
+    qtx11extras
+    qttools
+    kwindowsystem
+    qtgraphicaleffects
+    kglobalaccel
+    polkit
+    polkit-qt
+    pulseaudio
+    xorg.libSM
+    xorg.libXdmcp
+    xorg.libXtst
+    xorg.libXcursor
+    xorg.xf86inputlibinput
+    pcre
     fishui
   ];
 
