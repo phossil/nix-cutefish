@@ -25,14 +25,14 @@
             packages;
         }
       ) // {
-      overlay = final: prev: {
+      overlays.default = final: prev: {
         cutefish = (import ./packages {
           pkgs = prev.pkgs;
           makeScope = prev.lib.makeScope;
           libsForQt5 = prev.pkgs.libsForQt5;
         });
       };
-      nixosModule = { config, lib, pkgs, ... }:
+      nixosModules.default = { config, lib, pkgs, ... }:
         with lib;
         let
           xcfg = config.services.xserver;
