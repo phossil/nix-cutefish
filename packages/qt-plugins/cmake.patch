@@ -16,14 +16,14 @@ index cc55f01..5853b30 100644
      message(STATUS "Qt5 plugin directory:" "${QT_PLUGINS_DIR}")
  else()
 diff --git a/widgetstyle/CMakeLists.txt b/widgetstyle/CMakeLists.txt
-index 218f64b..bd6872b 100644
+index cc55f01..5853b30 100644
 --- a/widgetstyle/CMakeLists.txt
 +++ b/widgetstyle/CMakeLists.txt
-@@ -43,6 +43,6 @@ target_link_libraries(${TARGET}
-     KF5::WindowSystem
-     )
- 
--query_qmake(CMAKE_INSTALL_QTPLUGINDIR QT_INSTALL_PLUGINS)
-+set(CMAKE_INSTALL_QTPLUGINDIR ${KDE_INSTALL_QTPLUGINDIR})
- 
- install(TARGETS ${TARGET} DESTINATION ${CMAKE_INSTALL_QTPLUGINDIR}/styles/)
+@@ -15,6 +15,7 @@ find_package(PkgConfig REQUIRED)
+ find_package(KF5 REQUIRED WindowSystem)
+
++find_package(ECM 5.93.0)
+ include(ECMQueryQmake)
+
+ set (SRCS
+     blurhelper.cpp
