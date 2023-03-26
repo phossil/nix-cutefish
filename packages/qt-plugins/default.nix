@@ -16,7 +16,7 @@
 
 let
   name = "qt-plugins";
-  version = "0.3";
+  version = "0.5";
 in
 
 stdenv.mkDerivation {
@@ -25,7 +25,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-O7Z3jZqlfUS3A/gl+vuEbG0nCtLT2OBPnhFSMlkmMWA=";
+    sha256 = "sha256-4wQ1I5dQ+JJ9Bs+ySCu834CNI4HtaAu9+awydfQTWsE=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

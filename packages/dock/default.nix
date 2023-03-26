@@ -17,7 +17,7 @@
 
 let
   name = "dock";
-  version = "0.4";
+  version = "0.8";
 in
 
 stdenv.mkDerivation {
@@ -26,7 +26,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-lW3+shAKSYC2iQU67MGrPybnBM+kWTqRT2pavs1AGGk=";
+    sha256 = "sha256-AXfKbNKD49BMozibrNP5x58qPWr4m+cBVjUcAvkmPt4=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

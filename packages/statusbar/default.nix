@@ -18,7 +18,7 @@
 
 let
   name = "statusbar";
-  version = "0.4";
+  version = "0.7";
 in
 
 stdenv.mkDerivation {
@@ -27,7 +27,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-Z6JZni2WD74QP5udKvXK5JmoFmD9LfsktlfgMV1fTQo=";
+    sha256 = "sha256-wmKBJo1vWL57hEZms9ZLnU9Yq5oWDtzaQA13DryZkP8=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

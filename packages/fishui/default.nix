@@ -15,7 +15,7 @@
 
 let
   name = "fishui";
-  version = "0.4";
+  version = "0.8";
 in
 
 stdenv.mkDerivation {
@@ -24,7 +24,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-gwG/9OOXLDSWyBHz3yyc2hGor9r37U1rADEol/4Twjo=";
+    sha256 = "sha256-YpRG/eskrpL0f9kXVyHVYJ5m3Sg/zHAUYenbserf+iI=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

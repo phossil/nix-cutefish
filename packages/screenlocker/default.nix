@@ -17,7 +17,7 @@
 
 let
   name = "screenlocker";
-  version = "0.4";
+  version = "0.5";
 in
 
 stdenv.mkDerivation {
@@ -26,7 +26,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-Wj3bNWdYw0Nms4/Xqanf/ACxD9R/WfDYCUtw1QYL1PA=";
+    sha256 = "sha256-ohj98pt5EZXUfome6Amj+S2Mew9wLXoGRuB35oCy1cQ=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

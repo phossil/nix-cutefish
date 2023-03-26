@@ -16,7 +16,7 @@
 
 let
   name = "filemanager";
-  version = "0.4";
+  version = "0.8";
 in
 
 stdenv.mkDerivation {
@@ -25,7 +25,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-cjkXUTxwNDgbfv+0eMWNBA6kWCl6HVCG0k4gY6Pb9bM=";
+    sha256 = "sha256-cv7mwMbQNgxrX5vviu0yYcrW+eFriNO4X5HmSgPwsDM=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

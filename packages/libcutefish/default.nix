@@ -17,7 +17,7 @@
 
 let
   name = "libcutefish";
-  version = "0.4";
+  version = "0.7";
 in
 
 stdenv.mkDerivation {
@@ -26,7 +26,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-hkwpGrCgr9l4vKW0NTNx6Tzcd7oFRKfg6uGvsk1uXJE=";
+    sha256 = "sha256-MOmVPoDTyzk7cHmXXhG+794A81cDVkju0OvWCR2RtcQ=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

@@ -7,7 +7,7 @@
 
 let
   name = "icons";
-  version = "0.4";
+  version = "0.8";
 in
 
 stdenv.mkDerivation {
@@ -16,7 +16,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "sha256-SG3ivpsycY789uE/ljCRi0KsrR9WyNjqIbhWfNnjHjs=";
+    sha256 = "sha256-X5Hobhe4+nUnDbQYqa+PCMvXRotGwWmJ79QVnsUl4EE=";
   };
 
   nativeBuildInputs = [ cmake ];

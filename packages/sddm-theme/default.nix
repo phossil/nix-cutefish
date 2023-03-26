@@ -23,8 +23,8 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name;
-    version = "d3722b62c5b87b8bb88a7e2d75dbdefaadc7d1a2";
-    sha256 = "0mwah806qy7548gpyiwpyyfgslgpg9qbamqfx1bf3q5y3918j81j";
+    version = "7da9648764bb8113a6a9b07b3ca48799861b4451";
+    sha256 = "5XKbMcHs7L3v/cEO5hWKF90/1lmsDIqhMNAY3FNa2ps=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];

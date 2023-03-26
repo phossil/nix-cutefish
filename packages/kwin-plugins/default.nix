@@ -18,7 +18,7 @@
 
 let
   name = "kwin-plugins";
-  version = "0.5";
+  version = "0.8";
 in
 
 stdenv.mkDerivation {
@@ -27,7 +27,7 @@ stdenv.mkDerivation {
 
   src = fetchFromCutefishGitHub {
     inherit name version;
-    sha256 = "1kafaf4dpsqbw9709ccng9hjnavys8zwk01yq3cjgz4q4mwgh8jx";
+    sha256 = "VJZuxiPR2fG5ZbrTyqSbGfqxCVMQS4PDyg0CLMMNCuw=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
