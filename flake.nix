@@ -13,29 +13,23 @@
           cutefishPkgs = import ./packages { inherit pkgs makeScope libsForQt5; };
         in
         rec {
-          defaultPackage = pkgs.stdenv.mkDerivation {
-            name = "cutefish-meta";
-            buildInputs = nixpkgs.lib.attrsets.attrValues packages.cutefish;
-          };
-          packages = {
-            cutefish = flake-utils.lib.flattenTree cutefishPkgs;
-          };
+          packages = flake-utils.lib.flattenTree cutefishPkgs;
           devShells = builtins.mapAttrs
             (
               name: value:
                 pkgs.mkShell {
-                  nativeBuildInputs = packages.cutefish.${name}.nativeBuildInputs;
-                  buildInputs = packages.cutefish.${name}.buildInputs;
+                  nativeBuildInputs = packages.${name}.nativeBuildInputs;
+                  buildInputs = packages.${name}.buildInputs;
                 }
             )
-            packages.cutefish;
+            packages;
         }
       ) // {
-      overlay = self: super: {
+      overlay = final: prev: {
         cutefish = (import ./packages {
-          pkgs = super.pkgs;
-          makeScope = super.lib.makeScope;
-          libsForQt5 = super.pkgs.libsForQt5;
+          pkgs = prev.pkgs;
+          makeScope = prev.lib.makeScope;
+          libsForQt5 = prev.pkgs.libsForQt5;
         });
       };
       nixosModule = { config, lib, pkgs, ... }:
