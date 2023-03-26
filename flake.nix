@@ -24,6 +24,8 @@
                 }
             )
             packages;
+
+          formatter = pkgs.nixpkgs-fmt;
         }
       ) // {
       overlays.default = final: prev: {
