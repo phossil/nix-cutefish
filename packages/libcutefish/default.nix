@@ -13,6 +13,12 @@
 , bluez-qt
 , networkmanager-qt
 , modemmanager-qt
+, libcanberra
+, libpulseaudio
+, util-linux
+, libselinux
+, libsepol
+, pcre
 }:
 
 let
@@ -30,6 +36,7 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules wrapQtAppsHook ];
+
   buildInputs = [
     qtbase
     qtquickcontrols2
@@ -39,6 +46,12 @@ stdenv.mkDerivation {
     bluez-qt
     networkmanager-qt
     modemmanager-qt
+    libcanberra
+    libpulseaudio
+    util-linux
+    libselinux
+    libsepol
+    pcre
   ];
 
   patches = [ ./cmake.patch ];
