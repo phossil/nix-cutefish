@@ -19,6 +19,7 @@
 , libselinux
 , libsepol
 , pcre
+, fetchpatch
 }:
 
 let
@@ -54,7 +55,14 @@ stdenv.mkDerivation {
     pcre
   ];
 
-  patches = [ ./cmake.patch ];
+  patches = [
+    ./cmake.patch
+    (fetchpatch {
+      name = "libkscreen-5.27.patch";
+      url = "https://raw.githubusercontent.com/archlinux/svntogit-community/c7cc31d00d5b8c3c44dad14977d29078379136c3/trunk/libkscreen-5.27.patch";
+      sha256 = "0KCoaSboTuJ2LJfUDYxoNxIu17WUeohsc4dJZWaNAWE=";
+    })
+  ];
 
   postPatch = ''
     for i in $(find -name CMakeLists.txt)
@@ -69,6 +77,10 @@ stdenv.mkDerivation {
       substituteInPlace $i \
         --replace /usr/share /run/current-system/sw/share
     done
+
+    # kscreen related fix
+    substituteInPlace CMakeLists.txt \
+        --replace "CMAKE_CXX_STANDARD 14" "CMAKE_CXX_STANDARD 17"
   '';
 
   passthru.updateScript = cutefishUpdateScript { inherit name version; };
