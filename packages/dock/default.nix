@@ -46,7 +46,7 @@ stdenv.mkDerivation {
     do
       substituteInPlace $i \
         --replace /usr/ "" \
-        --replace /etc/ etc/
+        --replace /etc etc
     done
 
     for i in $(find -name '*.cpp')
