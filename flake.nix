@@ -63,7 +63,7 @@
                   dock
                   filemanager
                   icons
-                  kwin-plugins
+                  #kwin-plugins
                   launcher
                   qt-plugins
                   screenlocker

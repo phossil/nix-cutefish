@@ -18,6 +18,11 @@
 , xorg
 , pcre
 , fishui
+, libsForQt5
+, util-linux
+, libselinux
+, libsepol
+, mesa
 }:
 
 let
@@ -53,6 +58,15 @@ stdenv.mkDerivation {
     xorg.xf86inputlibinput
     pcre
     fishui
+    libsForQt5.kidletime
+    xorg.libxcb
+    xorg.libxcvt
+    xorg.xorgserver
+    xorg.xf86inputsynaptics
+    util-linux
+    libselinux
+    libsepol
+    mesa
   ];
 
   cmakeFlags = [
