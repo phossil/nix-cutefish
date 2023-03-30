@@ -15,6 +15,8 @@
 , xorg
 , libcutefish
 , fishui
+, libxcrypt
+, libsForQt5
 }:
 
 let
@@ -43,6 +45,8 @@ stdenv.mkDerivation {
     xorg.libXcursor
     libcutefish
     fishui
+    libxcrypt
+    libsForQt5.kconfig
   ];
 
   postPatch = ''
