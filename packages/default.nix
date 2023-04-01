@@ -32,4 +32,5 @@ makeScope libsForQt5.newScope (self: with self; {
   libcutefish = callPackage ./libcutefish { };
   fishui = callPackage ./fishui { };
   screenshot = callPackage ./screenshot { };
+  gtk-themes = callPackage ./gtk-themes { };  
 })
