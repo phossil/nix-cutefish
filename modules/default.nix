@@ -19,6 +19,13 @@ in
     #services.xserver.displayManager.sddm.theme = mkDefault "cutefish";
     services.accounts-daemon.enable = true;
 
+    # copy xdg desktop portal settings from plasma5
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ plasma5.xdg-desktop-portal-kde ];
+    # xdg-desktop-portal-kde expects PipeWire to be running.
+    # This does not, by default, replace PulseAudio.
+    services.pipewire.enable = mkDefault true;
+
     environment.pathsToLink = [ "/share" ];
     environment.systemPackages =
       let
