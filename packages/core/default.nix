@@ -87,6 +87,10 @@ stdenv.mkDerivation {
       substituteInPlace $i \
         --replace /usr/share /run/current-system/sw/share
     done
+
+    # desktop file is not of the correct type
+    substituteInPlace session/cutefish-xsession.desktop \
+      --replace "Application" "Xsession"
   '';
 
   passthru = {
