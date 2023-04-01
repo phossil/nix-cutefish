@@ -51,23 +51,24 @@ stdenv.mkDerivation {
     polkit
     polkit-qt
     pulseaudio
-    xorg.libSM
-    xorg.libXdmcp
-    xorg.libXtst
-    xorg.libXcursor
-    xorg.xf86inputlibinput
     pcre
     fishui
     libsForQt5.kidletime
-    xorg.libxcb
-    xorg.libxcvt
-    xorg.xorgserver
-    xorg.xf86inputsynaptics
     util-linux
     libselinux
     libsepol
     mesa
-  ];
+  ] ++ (with xorg; [
+    libSM
+    libXdmcp
+    libXtst
+    libXcursor
+    xf86inputlibinput
+    libxcb
+    libxcvt
+    xorgserver
+    xf86inputsynaptics
+  ]);
 
   cmakeFlags = [
     "-DXORGLIBINPUT_INCLUDE_DIRS=${lib.getDev xorg.xf86inputlibinput}/include/xorg"
