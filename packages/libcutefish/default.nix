@@ -20,6 +20,7 @@
 , libsepol
 , pcre
 , fetchpatch
+, accountsservice
 }:
 
 let
@@ -53,6 +54,7 @@ stdenv.mkDerivation {
     libselinux
     libsepol
     pcre
+    accountsservice
   ];
 
   patches = [
