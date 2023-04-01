@@ -46,6 +46,9 @@ in
           statusbar
           terminal
           wallpapers
+          screenshot
+          gtk-themes
+          videoplayer
         ];
         plasmaPkgs = with pkgs.libsForQt5; [
           kglobalaccel
