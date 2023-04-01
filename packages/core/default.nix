@@ -88,9 +88,10 @@ stdenv.mkDerivation {
         --replace /usr/share /run/current-system/sw/share
     done
 
-    # desktop file is not of the correct type
+    # desktop file is not loaded by GDM
     substituteInPlace session/cutefish-xsession.desktop \
-      --replace "Application" "Xsession"
+      --replace "Application" "Xsession" \
+      --replace "cutefish-session" "$out/bin/cutefish-session"
   '';
 
   passthru = {
