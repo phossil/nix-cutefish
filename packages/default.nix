@@ -33,4 +33,5 @@ makeScope libsForQt5.newScope (self: with self; {
   fishui = callPackage ./fishui { };
   screenshot = callPackage ./screenshot { };
   gtk-themes = callPackage ./gtk-themes { };  
+  videoplayer = callPackage ./videoplayer { };
 })
