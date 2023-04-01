@@ -66,6 +66,9 @@ stdenv.mkDerivation {
   passthru.updateScript = cutefishUpdateScript { inherit name version; };
 
   meta = with lib; {
+    # marked as broken because the filter the plugins on
+    # has been removed in kwin
+    broken = true;
     description = "CutefishOS - Some configuration and plugins of KWin";
     homepage = "https://cutefishos.com/";
     license = licenses.gpl3;

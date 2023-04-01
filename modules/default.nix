@@ -14,7 +14,9 @@ in
   };
   config = mkIf cfg.enable {
     services.xserver.displayManager.sessionPackages = [ pkgs.cutefish.core ];
-    services.xserver.displayManager.sddm.theme = mkDefault "cutefish";
+    # the theme removes the ability to choose other
+    # sessions with SDDM and should be enabled by default
+    #services.xserver.displayManager.sddm.theme = mkDefault "cutefish";
     services.accounts-daemon.enable = true;
 
     environment.pathsToLink = [ "/share" ];
@@ -26,6 +28,8 @@ in
           dock
           filemanager
           icons
+          # kwin-plugins is currently broken,
+          # please check the corresponding derivation
           #kwin-plugins
           launcher
           qt-plugins
