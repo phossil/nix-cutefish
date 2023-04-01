@@ -31,4 +31,5 @@ makeScope libsForQt5.newScope (self: with self; {
   wallpapers = callPackage ./wallpapers { };
   libcutefish = callPackage ./libcutefish { };
   fishui = callPackage ./fishui { };
+  screenshot = callPackage ./screenshot { };
 })
